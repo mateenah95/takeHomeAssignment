@@ -22,6 +22,7 @@ def processData(headers, data):
 
     for row in data:
         output = []
+
         output.append(row)
 
         for header in headers:
@@ -30,7 +31,10 @@ def processData(headers, data):
             else:
                 output.append(0)
 
+        output.append('') 
+
         finalOutput.append(output)
+
     return finalOutput
 
 # Helper utility function to write the output data to file
@@ -42,9 +46,7 @@ def writeOutputToFile(outputFileName, headers, outputDataList):
     with open(outputFileName, 'w', newline='') as csvfile:
         spamwriter = csv.writer(csvfile, delimiter=',', quotechar='|')
 
-        spamwriter.writerow([empty] + headers)
+        spamwriter.writerow([empty] + headers + [empty])
         spamwriter.writerows(outputDataList)
-        # for dataItem in outputDataList:
-        #     spamwriter.writerows(outputDataList)
         
         csvfile.close()

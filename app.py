@@ -5,13 +5,13 @@ import csv, json
 from utils import readData, processData, writeOutputToFile
 
 # Header Flags For Checks
-HEADERS_LIST = ['view_grades', 'change_grades', 'add_grades', 'delete_grades', 'view_classes', 'change_classes', 'add_classes', 'delete_classes'];
+HEADERS_LIST = ['view_grades', 'change_grades', 'add_grades', 'delete_grades', 'view_classes', 'change_classes', 'add_classes', 'delete_classes']
 
 # Input file name - ensure correct
 INPUT_FILE_NAME = 'in.json'
 
 # Output file name - ensure correct
-OUTPUT_FILE_NAME = 'outputs.csv'
+OUTPUT_FILE_NAME = 'out.csv'
 
 # Main Function Which Controls Execution
 def runMain():
