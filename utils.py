@@ -32,7 +32,6 @@ def processData(headers, data):
                 output.append(0)
 
         output.append('') 
-
         finalOutput.append(output)
 
     return finalOutput

@@ -3,6 +3,7 @@ import csv, json
 
 # Helper Function Imports
 from utils import readData, processData, writeOutputToFile
+from spreadsheetWriter import writeData
 
 # Header Flags For Checks
 HEADERS_LIST = ['view_grades', 'change_grades', 'add_grades', 'delete_grades', 'view_classes', 'change_classes', 'add_classes', 'delete_classes']
@@ -31,8 +32,13 @@ def runMain():
 
     try:
         writeOutputToFile(OUTPUT_FILE_NAME, HEADERS_LIST, dataOutputList)
+        writeData(HEADERS_LIST, 1)
+        for element in dataOutputList:
+            writeData(element, 0)
+
     except Exception as g:
         print('ERROR 3: File I/O Error While Writing Output Data! App terminating ...')
+        print(g)
         return
         
 print('-----------------------')
